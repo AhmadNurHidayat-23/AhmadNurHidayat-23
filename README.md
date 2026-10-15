@@ -19,15 +19,19 @@
 
 
 
+
 ## Tech Stack
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=html,css,js,php,laravel,mysql,flutter,dart,cpp,git,github,vscode&theme=dark&perline=12" alt="Tech Stack" />
+<img height="45" src="https://skillicons.dev/icons?i=html,css,js,php,laravel,bootstrap,react&theme=dark&perline=7" alt="Frontend and Backend" />
+<img height="45" width="45" src="https://cdn.simpleicons.org/codeigniter/EF4223" alt="CodeIgniter 4" />
+<img height="45" src="https://skillicons.dev/icons?i=mysql,flutter,dart,cpp,git,github,vscode&theme=dark&perline=7" alt="Database and Tools" />
 
 </div>
 
 ---
+
 
 
 ## Featured Projects
