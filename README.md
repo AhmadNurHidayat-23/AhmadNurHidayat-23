@@ -1,98 +1,105 @@
-
 <div align="center">
 
-![Header](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:1E40AF&height=200&section=header&text=Ahmad%20Nur%20Hidayat&fontSize=35&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Web%20Developer%20%7C%20Laravel%20Enthusiast&descAlignY=60&descSize=17)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:1E3A8A&height=180&section=header&text=Ahmad%20Nur%20Hidayat&fontSize=34&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Web%20Developer%20%7C%20Laravel%20Enthusiast&descAlignY=60&descSize=16" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=60A5FA&center=true&vCenter=true&width=550&lines=Hello%2C+Welcome+to+My+GitHub!;Passionate+About+Web+Development;Building+Web+Apps+with+Laravel;Always+Learning+New+Things)](https://git.io/typing-svg)
+<p>
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3000&pause=1000&color=60A5FA&center=true&vCenter=true&width=600&lines=Building+web+applications+with+PHP+and+Laravel;Focused+on+clean+and+functional+development;Always+learning+and+improving" alt="Typing SVG" />
+  </a>
+</p>
+
+<p>
+  <a href="https://github.com/AhmadNurHidayat-23">
+    <img src="https://img.shields.io/badge/GitHub-Profile-0F172A?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <img src="https://komarev.com/ghpvc/?username=AhmadNurHidayat-23&style=for-the-badge&color=1E40AF" alt="Profile views" />
+</p>
 
 </div>
 
 ---
 
-## 👨‍💻 About Me
+## Profile
 
-Halo! 👋 Saya **Ahmad Nur Hidayat**.
-
-Saya memiliki ketertarikan dalam pengembangan aplikasi web, khususnya menggunakan **PHP dan Laravel**.
-
-- 💻 Berfokus pada pengembangan aplikasi web
-- 🚀 Tertarik pada teknologi backend dan frontend
-- 🛠️ Mengembangkan proyek menggunakan Laravel dan MySQL
-- 📚 Terus belajar dan meningkatkan kemampuan programming
-- 🎯 Berusaha membangun aplikasi yang bermanfaat
+Web developer with an interest in building web applications using PHP, Laravel, and MySQL.  
+Focused on creating clean, structured, and functional applications while continuing to learn and improve development skills.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 <div align="center">
 
-### Languages & Frameworks
-
-[![Skills](https://skillicons.dev/icons?i=php,laravel,html,css,js&theme=dark)](https://skillicons.dev)
-
-### Database & Tools
-
-[![Skills](https://skillicons.dev/icons?i=mysql,git,github,vscode&theme=dark)](https://skillicons.dev)
+<img src="https://skillicons.dev/icons?i=php,laravel,html,css,js,mysql,git,github,vscode&theme=dark" />
 
 </div>
 
 ---
 
-## 🚀 Featured Projects
+## Featured Projects
 
-Saya mengembangkan berbagai proyek aplikasi web sebagai bagian dari proses belajar dan pengembangan kemampuan.
-
-🔗 **[Explore My Repositories](https://github.com/AhmadNurHidayat-23?tab=repositories)**
+<table>
+  <tr>
+    <td width="50%">
+      <h3>sistem-manajemen-layanan</h3>
+      <p>Pengembangan sistem manajemen usaha layanan seperti barbershop, salon, laundry, dan sejenisnya.</p>
+      <a href="https://github.com/AhmadNurHidayat-23/sistem-manajemen-layanan">View Repository</a>
+    </td>
+    <td width="50%">
+      <h3>sistem-manajement-usaha-layanan-web</h3>
+      <p>Aplikasi berbasis web untuk pengelolaan usaha layanan dengan pendekatan yang terstruktur dan mudah digunakan.</p>
+      <a href="https://github.com/AhmadNurHidayat-23/sistem-manajement-usaha-layanan-web">View Repository</a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>Sistem-Pendaftaran-Beasiswa</h3>
+      <p>Sistem pendaftaran beasiswa berbasis web untuk membantu proses pengelolaan dan seleksi data pendaftar.</p>
+      <a href="https://github.com/AhmadNurHidayat-23/Sistem-Pendaftaran-Beasiswa">View Repository</a>
+    </td>
+    <td width="50%">
+      <h3>Movix_Fix</h3>
+      <p>Proyek pengembangan aplikasi dengan fokus pada implementasi antarmuka dan pengelolaan fitur aplikasi.</p>
+      <a href="https://github.com/AhmadNurHidayat-23/Movix_Fix">View Repository</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 📊 GitHub Statistics
+## GitHub Statistics
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=AhmadNurHidayat-23&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AhmadNurHidayat-23&layout=compact&theme=tokyonight&hide_border=true)
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=AhmadNurHidayat-23&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true" />
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AhmadNurHidayat-23&layout=compact&theme=tokyonight&hide_border=true" />
 
 </div>
 
 ---
 
-## 🔥 GitHub Streak
+## Contribution Streak
 
 <div align="center">
 
-![GitHub Streak](https://streak-stats.demolab.com?user=AhmadNurHidayat-23&theme=tokyonight&hide_border=true)
+<img src="https://streak-stats.demolab.com?user=AhmadNurHidayat-23&theme=tokyonight&hide_border=true" />
 
 </div>
 
 ---
 
-## 📈 Contribution Graph
+## Contact
 
 <div align="center">
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=AhmadNurHidayat-23&theme=tokyo-night&hide_border=true)
-
-</div>
-
----
-
-## 🌐 Connect With Me
-
-<div align="center">
-
-[![GitHub](https://img.shields.io/badge/GitHub-0F172A?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AhmadNurHidayat-23)
+<a href="https://github.com/AhmadNurHidayat-23">
+  <img src="https://img.shields.io/badge/GitHub-AhmadNurHidayat--23-0F172A?style=for-the-badge&logo=github&logoColor=white" />
+</a>
 
 </div>
 
 ---
 
 <div align="center">
-
-⭐ Terima kasih sudah mengunjungi profil GitHub saya!
-
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:1E40AF&height=100&section=footer)
-
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:1E3A8A&height=100&section=footer" />
 </div>
