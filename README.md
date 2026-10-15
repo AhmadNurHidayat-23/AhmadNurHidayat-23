@@ -17,29 +17,32 @@
 
 ---
 
+
 ## Tech Stack
 
-<div align="center">
-
-**Languages & Frameworks**
-
-<br/>
-
-<img src="https://skillicons.dev/icons?i=php,laravel,html,css,js&theme=dark" alt="Languages and Frameworks" />
-
-<br/><br/>
-
-**Database & Development Tools**
-
-<br/>
-
-<img src="https://skillicons.dev/icons?i=mysql,git,github,vscode&theme=dark" alt="Database and Development Tools" />
-
-</div>
-
-<br/>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="middle">
+      <strong>Languages & Frameworks</strong>
+      <br/><br/>
+      <img
+        src="https://skillicons.dev/icons?i=php,laravel,html,css,js&theme=dark"
+        alt="Languages and Frameworks"
+      />
+    </td>
+    <td width="50%" align="center" valign="middle">
+      <strong>Database & Development Tools</strong>
+      <br/><br/>
+      <img
+        src="https://skillicons.dev/icons?i=mysql,git,github,vscode&theme=dark"
+        alt="Database and Development Tools"
+      />
+    </td>
+  </tr>
+</table>
 
 ---
+
 
 ## Featured Projects
 
