@@ -1,9 +1,7 @@
 
 <div align="center">
 
-
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:1E40AF&height=190&section=header&text=Ahmad%20Nur%20Hidayat&fontSize=36&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Web%20Developer&descAlignY=60&descSize=17" alt="Profile Banner" />
-
 
 <br/>
 
@@ -17,8 +15,22 @@
 
 ---
 
+<div align="center">
 
+### AHMD
 
+</div>
+
+```text
+    █████╗ ██╗  ██╗███╗   ███╗██████╗
+   ██╔══██╗██║  ██║████╗ ████║██╔══██╗
+   ███████║███████║██╔████╔██║██║  ██║
+   ██╔══██║██╔══██║██║╚██╔╝██║██║  ██║
+   ██║  ██║██║  ██║██║ ╚═╝ ██║██████╔╝
+   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═════╝
+```
+
+---
 
 ## Tech Stack
 
@@ -31,8 +43,6 @@
 </div>
 
 ---
-
-
 
 ## Featured Projects
 
@@ -91,7 +101,6 @@
 
 ---
 
-
 ## GitHub Statistics
 
 <table width="100%">
@@ -114,7 +123,6 @@
 </table>
 
 ---
-
 
 ## Contribution Streak
 
