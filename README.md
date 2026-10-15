@@ -18,28 +18,14 @@
 ---
 
 
+
 ## Tech Stack
 
-<table width="100%">
-  <tr>
-    <td width="50%" align="center" valign="middle">
-      <strong>Languages & Frameworks</strong>
-      <br/><br/>
-      <img
-        src="https://skillicons.dev/icons?i=php,laravel,html,css,js&theme=dark"
-        alt="Languages and Frameworks"
-      />
-    </td>
-    <td width="50%" align="center" valign="middle">
-      <strong>Database & Development Tools</strong>
-      <br/><br/>
-      <img
-        src="https://skillicons.dev/icons?i=mysql,git,github,vscode&theme=dark"
-        alt="Database and Development Tools"
-      />
-    </td>
-  </tr>
-</table>
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=html,css,js,php,laravel,mysql,flutter,dart,cpp,git,github,vscode&theme=dark&perline=12" alt="Tech Stack" />
+
+</div>
 
 ---
 
