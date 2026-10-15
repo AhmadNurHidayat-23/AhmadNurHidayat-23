@@ -1,16 +1,25 @@
-## Hi there 👋
 
-<!--
-**AhmadNurHidayat-23/AhmadNurHidayat-23** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# Halo! 👋 Saya Ahmad
 
-Here are some ideas to get you started:
+### Web Developer | Laravel Enthusiast
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Selamat datang di profil GitHub saya!
+
+Saya tertarik dengan pengembangan aplikasi web,
+khususnya menggunakan PHP dan Laravel.
+
+## 🛠️ Tech Stack
+
+- Backend: PHP, Laravel
+- Frontend: HTML, CSS, JavaScript
+- Database: MySQL
+- Version Control: Git & GitHub
+
+## 🚀 My Projects
+
+Di sini saya membagikan berbagai proyek
+dan eksperimen pengembangan aplikasi web.
+
+## 📊 GitHub Stats
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=AhmadNurHidayat-23&show_icons=true&theme=tokyonight)
