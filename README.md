@@ -87,21 +87,30 @@
 
 ---
 
+
 ## GitHub Statistics
 
-<div align="center">
-
-<img width="480" src="https://github-readme-stats.vercel.app/api?username=AhmadNurHidayat-23&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true" alt="GitHub Statistics" />
-
-<br/>
-
-<img width="420" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AhmadNurHidayat-23&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" alt="Top Languages" />
-
-</div>
-
-<br/>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="middle">
+      <img
+        width="100%"
+        src="https://github-readme-stats.vercel.app/api?username=AhmadNurHidayat-23&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true"
+        alt="GitHub Statistics"
+      />
+    </td>
+    <td width="50%" align="center" valign="middle">
+      <img
+        width="100%"
+        src="https://github-readme-stats.vercel.app/api/top-langs/?username=AhmadNurHidayat-23&layout=compact&theme=tokyonight&hide_border=true&langs_count=6&card_width=450"
+        alt="Most Used Languages"
+      />
+    </td>
+  </tr>
+</table>
 
 ---
+
 
 ## Contribution Streak
 
