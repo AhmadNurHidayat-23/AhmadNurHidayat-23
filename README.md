@@ -1,11 +1,14 @@
+
 <div align="center">
 
+
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:1E40AF&height=190&section=header&text=Ahmad%20Nur%20Hidayat&fontSize=36&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Web%20Developer&descAlignY=60&descSize=17" alt="Profile Banner" />
+
 
 <br/>
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3000&pause=1000&color=60A5FA&center=true&vCenter=true&width=600&lines=Building+Web+Applications;Focused+on+Clean+and+Functional+Code;Learning+and+Improving+Every+Day" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3000&pause=1000&color=60A5FA&center=true&vCenter=true&width=600&lines=Building+Web+Applications+with+Laravel;Focused+on+Clean+and+Functional+Code;Learning+and+Improving+Every+Day" alt="Typing Animation" />
 </a>
 
 </div>
@@ -116,18 +119,6 @@
 <div align="center">
 
 <img width="480" src="https://streak-stats.demolab.com?user=AhmadNurHidayat-23&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-
-</div>
-
-<br/>
-
----
-
-## Contribution Activity
-
-<div align="center">
-
-<img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=AhmadNurHidayat-23&bg_color=0d1117&color=58a6ff&line=39d353&point=39d353&area=true&hide_border=true" alt="Contribution Activity Graph" />
 
 </div>
 
