@@ -1,4 +1,4 @@
-![Abstract monochrome creative coding motion](https://raw.githubusercontent.com/AhmadNurHidayat-23/AhmadNurHidayat-23/e42c16af387ea00deccfd917b8f7e3849b26d09b/assets/creative-coding.gif)
+![Abstract monochrome creative coding motion](assets/creative-coding.png)
 
 ## 01 / Selected work
 
