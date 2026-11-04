@@ -1,13 +1,6 @@
-# Ahmad Nur Hidayat
-
-**Web Developer / Programmer**  
-Ciamis, Indonesia
-
-I build web applications with Laravel and React, from service operations and task management to browser-based tools. My work focuses on clear interfaces, practical workflows, and the details that make an application easier to run and maintain.
-
-[Portfolio](https://ahmadnurhidayat.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/ahmad-nur-hidayat-071169414/) · [Email](mailto:nurhidayata062.stu@pnc.ac.id)
-
----
+<p>
+  <img src="assets/creative-coding.gif" alt="Abstract monochrome motion: code marks transform through a geometric lattice into a modular interface." width="1280">
+</p>
 
 ## 01 / Selected work
 
