@@ -1,114 +1,35 @@
+# Ahmad Nur Hidayat
 
-<div align="center">
+**Web Developer / Programmer**  
+Ciamis, Indonesia
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:1E40AF&height=190&section=header&text=Ahmad%20Nur%20Hidayat&fontSize=36&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Web%20Developer&descAlignY=60&descSize=17" alt="Profile Banner" />
+I build web applications with Laravel and React, from service operations and task management to browser-based tools. My work focuses on clear interfaces, practical workflows, and the details that make an application easier to run and maintain.
 
-<br/>
-
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3000&pause=1000&color=60A5FA&center=true&vCenter=true&width=600&lines=Building+Web+Applications+with+Laravel;Focused+on+Clean+and+Functional+Code;Learning+and+Improving+Every+Day" alt="Typing Animation" />
-</a>
-
-</div>
-
-<br/>
+[Portfolio](https://ahmadnurhidayat.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/ahmad-nur-hidayat-071169414/) · [Email](mailto:nurhidayata062.stu@pnc.ac.id)
 
 ---
 
-## Featured Projects
+## 01 / Selected work
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Sistem Manajemen Layanan</h3>
-      <p>
-        Pengembangan sistem manajemen usaha layanan untuk barbershop, salon, laundry, dan layanan sejenis.
-      </p>
-      <a href="https://github.com/AhmadNurHidayat-23/sistem-manajemen-layanan">
-        <img src="https://img.shields.io/badge/View-Repository-1E40AF?style=flat-square&logo=github&logoColor=white" alt="View Repository" />
-      </a>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Manajemen Usaha Layanan Web</h3>
-      <p>
-        Proyek aplikasi web untuk pengembangan sistem pengelolaan usaha layanan.
-      </p>
-      <a href="https://github.com/AhmadNurHidayat-23/sistem-manajement-usaha-layanan-web">
-        <img src="https://img.shields.io/badge/View-Repository-1E40AF?style=flat-square&logo=github&logoColor=white" alt="View Repository" />
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Sistem Pendaftaran Beasiswa</h3>
-      <p>
-        Proyek aplikasi web yang berfokus pada sistem pendaftaran beasiswa.
-      </p>
-      <a href="https://github.com/AhmadNurHidayat-23/Sistem-Pendaftaran-Beasiswa">
-        <img src="https://img.shields.io/badge/View-Repository-1E40AF?style=flat-square&logo=github&logoColor=white" alt="View Repository" />
-      </a>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Movix</h3>
-      <p>
-        Salah satu proyek pengembangan aplikasi berbasis PHP.
-      </p>
-      <a href="https://github.com/AhmadNurHidayat-23/Movix_Fix">
-        <img src="https://img.shields.io/badge/View-Repository-1E40AF?style=flat-square&logo=github&logoColor=white" alt="View Repository" />
-      </a>
-    </td>
-  </tr>
-</table>
+| Project | What it explores | Built with |
+| :--- | :--- | :--- |
+| [SIMAUL](https://github.com/AhmadNurHidayat-23/sistem-manajement-usaha-layanan-web) | Multi-branch service operations: bookings, queues, point of sale, inventory, and role-based workflows. | Laravel · Blade · MySQL |
+| [Taskly](https://github.com/AhmadNurHidayat-23/taskly-sistem-manajemen-tugas) | Task management with priorities, deadlines, and filters; Docker images published through GitHub Actions. | Laravel · SQLite · Docker |
+| [Task Board](https://github.com/AhmadNurHidayat-23/task-board) | A Kanban board with drag-and-drop ordering and browser-local persistence. | React · TypeScript · Vite |
+| [Notes](https://github.com/AhmadNurHidayat-23/notes) | A Markdown workspace with autosave, tags, preview, and file import/export. | Next.js · React · TypeScript |
+| [Webhook Delivery](https://github.com/AhmadNurHidayat-23/webhook-delivery) | Queued webhook delivery with HMAC signatures, bounded retries, and attempt logs. | Laravel · SQLite · Queues |
+| [Live Chat](https://github.com/AhmadNurHidayat-23/live-chat) | Room-based messaging with presence, typing indicators, and temporary in-memory history. | Node.js · Express · Socket.IO |
 
-<div align="center">
+[Browse all repositories →](https://github.com/AhmadNurHidayat-23?tab=repositories)
 
-<a href="https://github.com/AhmadNurHidayat-23?tab=repositories">
-  <img src="https://img.shields.io/badge/Explore-All_Repositories-0F172A?style=for-the-badge&logo=github&logoColor=white" alt="All Repositories" />
-</a>
+## 02 / Toolkit
 
-</div>
+**Backend** — PHP, Laravel, Node.js, Express, MySQL, SQLite  
+**Frontend** — React, Next.js, TypeScript, JavaScript, Blade, HTML, CSS, Tailwind CSS  
+**Development** — Git, GitHub Actions, Docker, Vite, PHPUnit
 
-<br/>
+## 03 / Focus
 
----
+I am interested in Laravel application design, React interfaces, and reliable data flows. The repositories above include setup instructions and describe each project's scope and current limitations.
 
-## GitHub Statistics
-
-<table width="100%">
-  <tr>
-    <td width="50%" align="center" valign="middle">
-      <img
-        width="100%"
-        src="https://github-readme-stats.vercel.app/api?username=AhmadNurHidayat-23&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true"
-        alt="GitHub Statistics"
-      />
-    </td>
-    <td width="50%" align="center" valign="middle">
-      <img
-        width="100%"
-        src="https://github-readme-stats.vercel.app/api/top-langs/?username=AhmadNurHidayat-23&layout=compact&theme=tokyonight&hide_border=true&langs_count=6&card_width=450"
-        alt="Most Used Languages"
-      />
-    </td>
-  </tr>
-</table>
-
----
-
-## Contribution Streak
-
-<div align="center">
-
-<img width="480" src="https://streak-stats.demolab.com?user=AhmadNurHidayat-23&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-
-</div>
-
-<br/>
-
----
-
-<div align="center">
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:1E40AF&height=110&section=footer" alt="Footer" />
-
-</div>
+For a conversation about web development or a specific project, [connect on LinkedIn](https://www.linkedin.com/in/ahmad-nur-hidayat-071169414/) or [send an email](mailto:nurhidayata062.stu@pnc.ac.id).
