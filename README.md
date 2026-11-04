@@ -1,6 +1,4 @@
-<p>
-  <img src="https://raw.githubusercontent.com/AhmadNurHidayat-23/AhmadNurHidayat-23/main/assets/creative-coding.gif" alt="Abstract monochrome motion: code marks transform through a geometric lattice into a modular interface." width="1280">
-</p>
+![Abstract monochrome creative coding motion](https://raw.githubusercontent.com/AhmadNurHidayat-23/AhmadNurHidayat-23/e42c16af387ea00deccfd917b8f7e3849b26d09b/assets/creative-coding.gif)
 
 ## 01 / Selected work
 
