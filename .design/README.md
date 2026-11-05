@@ -28,7 +28,7 @@ The workflow in `.github/workflows/activity.yml` refreshes only the activity dat
 - GIF is the primary format: no JavaScript, CSS animation, remote card service or iframe is needed in the README.
 - Each loop is 160 frames at 20 fps. Smooth periodic functions avoid an abrupt last-to-first transition.
 - Delta frames and a grayscale palette keep the animation small while retaining sharp text.
-- `<picture>` selects mobile layouts below 600 px and motion-free SVGs for `prefers-reduced-motion: reduce`.
+- `<picture>` selects mobile layouts below 900 px and motion-free SVGs for `prefers-reduced-motion: reduce`.
 - Every asset has descriptive alt text and SVG titles. Essential copy remains visible throughout the loop.
 - A separate [motion-free edition](STATIC.md) is available for readers whose client does not honor media queries or whose GitHub animation setting differs from their system preference.
 - The fixed near-black canvases keep the same contrast in both GitHub light and dark themes.

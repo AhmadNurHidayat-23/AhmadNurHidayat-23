@@ -57,15 +57,15 @@ function glyph(x,y,size,t){
 }
 function hero(t,mobile=false){
  const w=mobile?720:1200,h=mobile?570:480,p=mobile?36:56;
- let b=label('AH / WEB + MOBILE DEVELOPER',p,mobile?56:53,mobile?20:18);
+ let b=label('AH / WEB + MOBILE DEVELOPER',p,mobile?56:53,mobile?24:18);
  b+=line(p,80,w-p,80);
  if(mobile){
    b+=movingText('AHMAD',p,205,fit('AHMAD',510,116),t,4);
    b+=movingText('NUR',p,321,116,t+.04,4);
    b+=movingText('HIDAYAT.',p,437,fit('HIDAYAT.',w-p*2,114),t+.08,4);
-   b+=glyph(592,287,125,t);
+   b+=glyph(592,270,125,t);
    b+=line(p,485,w-p,485);
-   b+=label('DESIGN. DEVELOP. CREATE.',p,531,22,FG);
+   b+=label('DESIGN. DEVELOP. CREATE.',p,531,26,FG);
  }else{
    b+=movingText('AHMAD NUR',p,223,fit('AHMAD NUR',875,128),t,5);
    b+=movingText('HIDAYAT.',p-5,371,fit('HIDAYAT.',890,162),t+.07,6);
@@ -84,7 +84,7 @@ for(const [,slug] of technologies){
 }
 function technology(t,mobile=false){
  const w=mobile?720:1200,h=mobile?445:230,p=mobile?36:56;
- let b=label('01 / TOOLS & TECHNOLOGIES',p,42,mobile?20:18);
+ let b=label('01 / TOOLS & TECHNOLOGIES',p,42,mobile?22:18);
  b+=line(p,64,w-p,64);
  const cols=mobile?3:9,cell=(w-2*p)/cols;
  technologies.forEach(([name,slug],i)=>{
@@ -92,7 +92,7 @@ function technology(t,mobile=false){
    const dy=3*wave(t,i/9);
    const size=mobile?44:43;
    b+=`<g transform="translate(${x-size/2} ${y+dy}) scale(${size/24})"><path d="${logos[slug]}" fill="${FG}"/></g>`;
-   b+=label(name,x-mono.getAdvanceWidth(name,mobile?20:15)/2,y+(mobile?77:79),mobile?20:15,FG);
+   b+=label(name,x-mono.getAdvanceWidth(name,mobile?24:15)/2,y+(mobile?77:79),mobile?24:15,FG);
    if(!mobile&&i<8) b+=line(p+cell*(i+1),110,p+cell*(i+1),152,MUTED,.25);
  });
  b+=`<rect x="${p}" y="${h-12}" width="${w-2*p}" height="1" fill="${MUTED}" opacity=".3"/><rect x="${p+(w-2*p-80)*ease(t)}" y="${h-13}" width="80" height="2" fill="${FG}"/>`;
@@ -113,13 +113,13 @@ function projectCard(project,t,mobile=false){
  const first=project.index==='01',w=mobile?720:1200,h=mobile?(first?608:550):(first?380:322),p=mobile?36:56;
  const extra=first?58:0,top=extra+24;
  let b='';
- if(first){b+=label('02 / SELECTED WORK',p,38,mobile?20:18);b+=line(p,60,w-p,60);}
- b+=label(`${project.index} / ${project.type}`,p,top+33,mobile?20:17);
+ if(first){b+=label('02 / SELECTED WORK',p,38,mobile?22:18);b+=line(p,60,w-p,60);}
+ b+=label(`${project.index} / ${project.type}`,p,top+33,mobile?22:17);
  const titleSize=fit(project.title,mobile?600:500,mobile?70:70);
  b+=movingText(project.title,p-2,top+(mobile?116:119),titleSize,t,.9);
- const descSize=mobile?21:19;
+ const descSize=mobile?26:19;
  project.desc.forEach((l,i)=>b+=label(l,p,top+(mobile?155:165)+i*31,descSize,i===0?FG:MUTED));
- b+=label(project.stack,p,top+(mobile?234:262),mobile?18:16,MUTED);
+ b+=label(project.stack,p,top+(mobile?234:262),mobile?23:16,MUTED);
  b+=arrow(w-p-25,top+6,25,3*ease(t));
  const rx=mobile?p:638,ry=mobile?top+270:top+45,rw=mobile?w-p*2:506,rh=mobile?228:221;
  if(project.image){
@@ -147,10 +147,10 @@ if(total!==calendar.totalContributions) throw new Error('Contribution total mism
 const levels={NONE:BG,FIRST_QUARTILE:'#535353',SECOND_QUARTILE:MUTED,THIRD_QUARTILE:'#C5C5C5',FOURTH_QUARTILE:FG};
 function activity(t,mobile=false){
  const w=mobile?720:1200,h=mobile?430:335,p=mobile?36:56;
- let b=label('03 / GITHUB ACTIVITY',p,42,mobile?20:18);
+ let b=label('03 / GITHUB ACTIVITY',p,42,mobile?22:18);
  b+=line(p,64,w-p,64);
  b+=text(String(total),p-3,mobile?166:161,mobile?84:86);
- b+=label('CONTRIBUTIONS / PAST YEAR',mobile?237:260,mobile?147:143,mobile?18:19,FG);
+ b+=label('CONTRIBUTIONS / PAST YEAR',mobile?237:260,mobile?147:143,mobile?20:19,FG);
  const weeks=calendar.weeks,step=(w-2*p)/(weeks.length),cell=Math.max(3,step-5),start=mobile?212:190;
  weeks.forEach((week,col)=>week.contributionDays.forEach(day=>{
    b+=`<rect x="${p+col*step}" y="${start+day.weekday*(mobile?19:15)}" width="${cell}" height="${mobile?14:10}" fill="${levels[day.contributionLevel]}" stroke="${MUTED}" stroke-width=".6" stroke-opacity="${day.contributionCount?.2:.45}"/>`;
@@ -166,11 +166,11 @@ function activity(t,mobile=false){
 function footer(t,mobile=false){
  const w=mobile?720:1200,h=mobile?310:244,p=mobile?36:56;
  let b=line(p,1,w-p,1);
- b+=label('04 / ALWAYS IN PROGRESS',p,48,mobile?20:18);
+ b+=label('04 / ALWAYS IN PROGRESS',p,48,mobile?22:18);
  if(mobile){
    b+=movingText('BUILDING THINGS',p-2,132,fit('BUILDING THINGS',w-2*p,62),t,2);
    b+=movingText('FOR THE WEB.',p-2,209,69,t+.08,2);
-   b+=label('LET’S CONNECT',p,278,20,FG);
+   b+=label('LET’S CONNECT',p,278,24,FG);
    b+=arrow(w-p-26,254,25,3*ease(t));
  }else{
    b+=movingText('BUILDING THINGS',p-2,127,fit('BUILDING THINGS',900,78),t,2);
@@ -211,7 +211,7 @@ async function render(name,draw){
  console.log(`${name}: ${(bytes.length/1024).toFixed(0)} KB / ${FRAMES} frames / ${PERIOD}s`);
 }
 const activityOnly=process.argv.includes('--activity');
-for(const mobile of [false,true]){
+for(const mobile of (process.argv.includes('--mobile')?[true]:[false,true])){
  const suffix=mobile?'-mobile':'';
  if(!activityOnly){
    await render('hero'+suffix,t=>hero(t,mobile));
