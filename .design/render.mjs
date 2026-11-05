@@ -56,24 +56,23 @@ function glyph(x,y,size,t){
  return `<g transform="translate(${x} ${y})">${body}${line(-size*.55,0,size*.55,0,MUTED,.5)}${line(0,-size*.55,0,size*.55,MUTED,.5)}<circle r="4" fill="${FG}"/></g>`;
 }
 function hero(t,mobile=false){
- const w=mobile?720:1200,h=mobile?570:480,p=mobile?36:56;
- let b=label('AH / WEB + MOBILE DEVELOPER',p,mobile?56:53,mobile?24:18);
+ const w=mobile?720:1200,h=mobile?490:480,p=mobile?36:56;
+ let b=label('WEB + MOBILE DEVELOPER',p,mobile?56:53,mobile?24:18);
  b+=line(p,80,w-p,80);
  if(mobile){
-   b+=movingText('AHMAD',p,205,fit('AHMAD',510,116),t,4);
-   b+=movingText('NUR',p,321,116,t+.04,4);
-   b+=movingText('HIDAYAT.',p,437,fit('HIDAYAT.',w-p*2,114),t+.08,4);
-   b+=glyph(592,270,125,t);
-   b+=line(p,485,w-p,485);
-   b+=label('DESIGN. DEVELOP. CREATE.',p,531,26,FG);
+   b+=movingText('BEYOND.',p,219,fit('BEYOND.',490,116),t,4);
+   b+=movingText('THE CODE.',p-2,359,fit('THE CODE.',w-p*2,114),t+.07,4);
+   b+=glyph(610,207,100,t);
+   b+=line(p,405,w-p,405);
+   b+=label('DESIGN. DEVELOP. CREATE.',p,451,26,FG);
  }else{
-   b+=movingText('AHMAD NUR',p,223,fit('AHMAD NUR',875,128),t,5);
-   b+=movingText('HIDAYAT.',p-5,371,fit('HIDAYAT.',890,162),t+.07,6);
+   b+=movingText('BEYOND.',p,223,fit('BEYOND.',860,162),t,5);
+   b+=movingText('THE CODE.',p-5,371,fit('THE CODE.',860,162),t+.07,6);
    b+=glyph(1048,258,150,t);
    b+=label('DESIGN. DEVELOP. CREATE.',p,439,20,FG);
    b+=label('SELECTED WORK / GITHUB',863,439,17);
  }
- return svg(w,h,b,'Ahmad Nur Hidayat. Web and mobile developer. Design. Develop. Create.');
+ return svg(w,h,b,'Beyond. The code. Web and mobile developer. Design. Develop. Create.');
 }
 const technologies=[['Laravel','laravel'],['PHP','php'],['JavaScript','javascript'],['React','react'],['Tailwind CSS','tailwindcss'],['MySQL','mysql'],['Flutter','flutter'],['Git','git'],['GitHub','github']];
 const logos={};
@@ -211,8 +210,13 @@ async function render(name,draw){
  console.log(`${name}: ${(bytes.length/1024).toFixed(0)} KB / ${FRAMES} frames / ${PERIOD}s`);
 }
 const activityOnly=process.argv.includes('--activity');
+const heroOnly=process.argv.includes('--hero');
 for(const mobile of (process.argv.includes('--mobile')?[true]:[false,true])){
  const suffix=mobile?'-mobile':'';
+ if(heroOnly){
+   await render('hero'+suffix,t=>hero(t,mobile));
+   continue;
+ }
  if(!activityOnly){
    await render('hero'+suffix,t=>hero(t,mobile));
    await render('technologies'+suffix,t=>technology(t,mobile));
@@ -221,7 +225,7 @@ for(const mobile of (process.argv.includes('--mobile')?[true]:[false,true])){
  }
  await render('activity'+suffix,t=>activity(t,mobile));
 }
-if(!activityOnly){
+if(!activityOnly&&!heroOnly){
  const contact=async(mobile)=>{
    const suffix=mobile?'-mobile':'';
    const names=['hero','technologies','simaul-web','simaul-mobile','task-board','activity','footer'];
