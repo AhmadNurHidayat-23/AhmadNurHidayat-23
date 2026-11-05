@@ -36,8 +36,8 @@ function fit(value,max,size,font=display){return Math.min(size,max/font.getAdvan
 function label(value,x,y,size=18,fill=MUTED){return text(value,x,y,size,fill,mono);}
 function line(x1,y1,x2,y2,color=MUTED,opacity=.4,width=1){return `<path d="M${x1} ${y1}L${x2} ${y2}" fill="none" stroke="${color}" stroke-width="${width}" opacity="${opacity}"/>`;}
 function arrow(x,y,size=26,offset=0){return `<g transform="translate(${x+offset} ${y-offset})" fill="none" stroke="${FG}" stroke-width="2.5"><path d="M0 ${size}L${size} 0M0 0H${size}V${size}"/></g>`;}
-function svg(w,h,body,title='Ahmad Nur Hidayat — portfolio motion'){
- return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img"><title>${title.replaceAll('&','&amp;').replaceAll('<','&lt;')}</title><rect width="${w}" height="${h}" fill="${BG}"/>${body}</svg>`;
+function svg(w,h,body,title='Ahmad Nur Hidayat — portfolio motion',background=BG){
+ return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img"><title>${title.replaceAll('&','&amp;').replaceAll('<','&lt;')}</title><rect width="${w}" height="${h}" fill="${background}"/>${body}</svg>`;
 }
 function movingText(value,x,y,size,t,amplitude=6){
  let body='',cursor=x;
@@ -47,13 +47,73 @@ function movingText(value,x,y,size,t,amplitude=6){
  }
  return body;
 }
-function glyph(x,y,size,t){
- let body=''; const a=45*wave(t)/2;
- for(let i=0;i<4;i++){
-   const r=size*(.22+i*.095);
-   body+=`<rect x="${-r}" y="${-r}" width="${r*2}" height="${r*2}" fill="none" stroke="${i===3?FG:MUTED}" stroke-width="${i===3?2:1}" transform="rotate(${a*(i+1)/4})"/>`;
+function perspectiveGrid(w,h,t,cx,cy,mobile){
+ const stroke=mobile?1.3:1.05;
+ let body='';
+ // The same vanishing point anchors the floor, ceiling and orbital object.
+ for(let i=-8;i<=14;i++){
+   const x=i*w/6;
+   body+=line(cx,cy,x,h+80,MUTED,.14,stroke);
+   body+=line(cx,cy,x,-80,MUTED,.09,stroke);
  }
- return `<g transform="translate(${x} ${y})">${body}${line(-size*.55,0,size*.55,0,MUTED,.5)}${line(0,-size*.55,0,size*.55,MUTED,.5)}<circle r="4" fill="${FG}"/></g>`;
+ const phase=(t*2)%1;
+ for(const direction of [-1,1]){
+   const span=(direction>0?h-cy:cy)+70;
+   for(let i=-3;i<28;i++){
+     const distance=span*Math.pow(.69,i+phase);
+     if(distance<7) continue;
+     const y=cy+direction*distance;
+     if(y<0||y>h) continue;
+     const opacity=Math.min(.23,.07+.16*Math.min(1,distance/span));
+     body+=line(0,y,w,y,MUTED,direction>0?opacity:opacity*.68,stroke);
+   }
+ }
+ body+=line(0,cy,w,cy,MUTED,.055,stroke);
+ return `<g aria-hidden="true">${body}</g>`;
+}
+function orbitalWireframe(cx,cy,scale,t,mobile){
+ const angle=t*TAU+.42,cosY=Math.cos(angle),sinY=Math.sin(angle);
+ const rotate=([x,y,z])=>{
+   const tilt=.61;
+   const yy=y*Math.cos(tilt)-z*Math.sin(tilt),zz=y*Math.sin(tilt)+z*Math.cos(tilt);
+   return [x*cosY+zz*sinY,yy,-x*sinY+zz*cosY];
+ };
+ const project=point=>{
+   const [x,y,z]=rotate(point),perspective=6/(6-z);
+   const xx=x*perspective,yy=y*perspective,roll=-.24;
+   return {x:cx+scale*(xx*Math.cos(roll)-yy*Math.sin(roll)),y:cy+scale*(xx*Math.sin(roll)+yy*Math.cos(roll)),z};
+ };
+ const curves=[];
+ const torus=(u,v)=>project([(1+.235*Math.cos(v))*Math.cos(u),(1+.235*Math.cos(v))*Math.sin(u),.235*Math.sin(v)]);
+ for(let v=0;v<6;v++)curves.push({points:Array.from({length:97},(_,i)=>torus(i*TAU/96,v*TAU/6)),orbit:false});
+ for(let u=0;u<12;u++)curves.push({points:Array.from({length:33},(_,i)=>torus(u*TAU/12,i*TAU/32)),orbit:false});
+ const orbitPoint=(u,index)=>{
+   const tilt=[.88,-.72,.30][index],turn=[.3,-.65,1.1][index],r=[1.36,1.41,1.31][index];
+   const x=r*Math.cos(u),y=r*Math.sin(u)*Math.cos(tilt),z=r*Math.sin(u)*Math.sin(tilt);
+   return project([x*Math.cos(turn)-y*Math.sin(turn),x*Math.sin(turn)+y*Math.cos(turn),z]);
+ };
+ for(let i=0;i<3;i++)curves.push({points:Array.from({length:113},(_,j)=>orbitPoint(j*TAU/112,i)),orbit:true});
+ const layers={back:[],front:[]};
+ for(const curve of curves){
+   let group=[],previousSide;
+   const flush=()=>{
+     if(group.length<2)return;
+     const d=group.map((p,i)=>`${i?'L':'M'}${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join('');
+     layers[previousSide].push(`<path d="${d}" fill="none" stroke="${curve.orbit?MUTED:FG}" stroke-width="${mobile?1.25:1.0}" opacity="${previousSide==='back'?(curve.orbit?.22:.20):(curve.orbit?.50:.73)}"/>`);
+   };
+   for(let i=1;i<curve.points.length;i++){
+     const a=curve.points[i-1],b=curve.points[i],side=(a.z+b.z)/2>0?'front':'back';
+     if(side!==previousSide){flush();group=[a];previousSide=side;}
+     group.push(b);
+   }
+   flush();
+ }
+ const particles=[];
+ for(let i=0;i<3;i++){
+   const p=orbitPoint(t*TAU*(i===1?1:2)+i*2.1,i);
+   particles.push(`<circle cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="${mobile?2.1:2.0}" fill="${FG}" opacity="${p.z>0?.75:.36}"/>`);
+ }
+ return `<g aria-hidden="true">${layers.back.join('')}${layers.front.join('')}${particles.join('')}</g>`;
 }
 function welcomeTypewriter(t,mobile,p){
  const headline='WELCOME TO MY GITHUB',seconds=t*PERIOD;
@@ -79,19 +139,20 @@ function welcomeTypewriter(t,mobile,p){
 }
 function hero(t,mobile=false){
  const w=mobile?720:1200,h=mobile?490:480,p=mobile?36:56;
- let b=label('WEB + MOBILE DEVELOPER',p,mobile?56:53,mobile?24:18);
+ const cx=mobile?594:1000,cy=mobile?245:250;
+ let b=perspectiveGrid(w,h,t,cx,cy,mobile);
+ b+=orbitalWireframe(cx,cy,mobile?70:103,t,mobile);
+ b+=label('WEB + MOBILE DEVELOPER',p,mobile?56:53,mobile?24:18);
  b+=line(p,80,w-p,80);
- b+=welcomeTypewriter(t,mobile,p);
+ b+=welcomeTypewriter((t*2)%1,mobile,p);
  if(mobile){
-   b+=glyph(610,207,100,t);
    b+=line(p,405,w-p,405);
    b+=label('DESIGN. DEVELOP. CREATE.',p,451,26,FG);
  }else{
-   b+=glyph(1048,258,150,t);
    b+=label('DESIGN. DEVELOP. CREATE.',p,439,20,FG);
    b+=label('SELECTED WORK / GITHUB',863,439,17);
  }
- return svg(w,h,b,'Welcome to my GitHub. Web and mobile developer. Design. Develop. Create.');
+ return svg(w,h,b,'Orbital Infinity Motion. Welcome to my GitHub. Design. Develop. Create.','#080808');
 }
 const technologies=[['Laravel','laravel'],['PHP','php'],['JavaScript','javascript'],['React','react'],['Tailwind CSS','tailwindcss'],['MySQL','mysql'],['Flutter','flutter'],['Git','git'],['GitHub','github']];
 const logos={};
@@ -200,44 +261,45 @@ function footer(t,mobile=false){
 
 // Reserved transparent index 0 plus an evenly spaced grayscale palette.
 // Delta frames preserve all unchanged pixels and avoid repeating screenshot data.
-const palette=[[0,0,0],...Array.from({length:127},(_,i)=>{const v=Math.round(10+i*245/126);return[v,v,v];})];
-function indexed(pixels){
+const grayscalePalette=(black=10,colors=128)=>[[0,0,0],...Array.from({length:colors-1},(_,i)=>{const v=Math.round(black+i*(255-black)/(colors-2));return[v,v,v];})];
+function indexed(pixels,black=10,colors=128){
  const result=new Uint8Array(pixels.length/4);
- for(let p=0,i=0;p<pixels.length;p+=4,i++) result[i]=1+Math.max(0,Math.min(126,Math.round((pixels[p]-10)*126/245)));
+ for(let p=0,i=0;p<pixels.length;p+=4,i++) result[i]=1+Math.max(0,Math.min(colors-2,Math.round((pixels[p]-black)*(colors-2)/(255-black))));
  return result;
 }
-async function render(name,draw){
+async function render(name,draw,{black=10,frames=FRAMES,period=PERIOD,colors=128,width}={}){
  const still=draw(0);
  await fs.writeFile(path.join(OUT,name+'.svg'),still);
- const first=new Resvg(still,{font:{loadSystemFonts:false}}).render();
+ const rasterOptions={font:{loadSystemFonts:false},...(width?{fitTo:{mode:'width',value:width}}:{})};
+ const first=new Resvg(still,rasterOptions).render();
  await fs.writeFile(path.join(PREVIEW,name+'.png'),first.asPng());
  if(process.argv.includes('--stills')) return;
- const encoder=GIFEncoder(); let previous;
- for(let i=0;i<FRAMES;i++){
-   const frame=i===0?first:new Resvg(draw(i/FRAMES),{font:{loadSystemFonts:false}}).render();
-   const current=indexed(frame.pixels);
+ const encoder=GIFEncoder(),palette=grayscalePalette(black,colors); let previous;
+ for(let i=0;i<frames;i++){
+   const frame=i===0?first:new Resvg(draw(i/frames),rasterOptions).render();
+   const current=indexed(frame.pixels,black,colors);
    const delta=current.slice();
    if(previous) for(let j=0;j<delta.length;j++) if(current[j]===previous[j]) delta[j]=0;
    encoder.writeFrame(delta,frame.width,frame.height,{
-     ...(i===0?{palette}:{}),delay:DELAY,repeat:0,dispose:1,transparent:i>0,transparentIndex:0,
+     ...(i===0?{palette}:{}),delay:DELAY,repeat:0,dispose:1,transparent:i>0,transparentIndex:0,colorDepth:colors===128?8:Math.log2(colors),
    });
    previous=current;
  }
  encoder.finish();
  const bytes=encoder.bytes();
  await fs.writeFile(path.join(OUT,name+'.gif'),bytes);
- console.log(`${name}: ${(bytes.length/1024).toFixed(0)} KB / ${FRAMES} frames / ${PERIOD}s`);
+ console.log(`${name}: ${(bytes.length/1024).toFixed(0)} KB / ${frames} frames / ${period}s`);
 }
 const activityOnly=process.argv.includes('--activity');
 const heroOnly=process.argv.includes('--hero');
 for(const mobile of (process.argv.includes('--mobile')?[true]:[false,true])){
  const suffix=mobile?'-mobile':'';
  if(heroOnly){
-   await render('hero-welcome-compact'+suffix,t=>hero(t,mobile));
+   await render('hero-orbital-infinity'+suffix,t=>hero(t,mobile),{black:8,frames:320,period:16,colors:32,width:mobile?600:1000});
    continue;
  }
  if(!activityOnly){
-   await render('hero-welcome-compact'+suffix,t=>hero(t,mobile));
+   await render('hero-orbital-infinity'+suffix,t=>hero(t,mobile),{black:8,frames:320,period:16,colors:32,width:mobile?600:1000});
    await render('technologies'+suffix,t=>technology(t,mobile));
    for(const project of projects) await render(project.slug+suffix,t=>projectCard(project,t,mobile));
    await render('footer'+suffix,t=>footer(t,mobile));
@@ -247,7 +309,7 @@ for(const mobile of (process.argv.includes('--mobile')?[true]:[false,true])){
 if(!activityOnly&&!heroOnly){
  const contact=async(mobile)=>{
    const suffix=mobile?'-mobile':'';
-   const names=['hero-welcome-compact','technologies','simaul-web','simaul-mobile','task-board','activity','footer'];
+   const names=['hero-orbital-infinity','technologies','simaul-web','simaul-mobile','task-board','activity','footer'];
    const width=mobile?390:900;let y=0;const items=[];
    for(const name of names){const data=await sharp(path.join(PREVIEW,name+suffix+'.png')).resize({width}).png().toBuffer();const meta=await sharp(data).metadata();items.push({input:data,left:0,top:y});y+=meta.height+12;}
    await sharp({create:{width,height:y,channels:3,background:BG}}).composite(items).png().toFile(path.join(PREVIEW,`overview${suffix}.png`));

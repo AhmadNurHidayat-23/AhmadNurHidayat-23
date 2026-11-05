@@ -3,8 +3,8 @@
 <p align="center">
 <a href="https://ahmadnurhidayat.vercel.app/">
 <picture>
-  <source media="(max-width: 900px)" srcset="../assets/motion/hero-welcome-compact-mobile.svg">
-  <img src="../assets/motion/hero-welcome-compact.svg" width="1200" alt="Welcome to my GitHub. Web and mobile developer. Design. Develop. Create.">
+  <source media="(max-width: 900px)" srcset="../assets/motion/hero-orbital-infinity-mobile.svg">
+  <img src="../assets/motion/hero-orbital-infinity.svg" width="1200" alt="Welcome to my GitHub. Web and mobile developer. Design. Develop. Create.">
 </picture>
 </a>
 </p>

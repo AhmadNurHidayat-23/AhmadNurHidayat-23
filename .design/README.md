@@ -1,6 +1,8 @@
 # Profile motion identity
 
-An original Swiss editorial composition for Ahmad Nur Hidayat: oversized Archivo Black typography, Space Mono annotations, a restrained registration grid, and one eight-second motion rhythm. The palette is #0A0A0A, #FFFFFF and #8A8A8A, with intermediate grayscale shades for antialiasing and authentic screenshots.
+An original Swiss editorial composition for Ahmad Nur Hidayat: Archivo Black typography, Space Mono annotations, and restrained monochrome motion. The palette is #0A0A0A, #FFFFFF and #8A8A8A, with intermediate grayscale shades for antialiasing and authentic screenshots. The Orbital Infinity Motion hero uses the requested solid #080808 background.
+
+The hero combines a projected 3D wireframe torus, three orbital tracks and particles, and a receding perspective grid sharing the same vanishing point. All layers are rendered into one GIF. Its 16-second background loop contains two unchanged eight-second typewriter cycles; the previous headline font sizes and caption remain unchanged. The motion-free SVG shows the complete headline.
 
 ## Files and rebuilds
 
@@ -26,7 +28,7 @@ The workflow in `.github/workflows/activity.yml` refreshes only the activity dat
 ## GitHub rendering and accessibility
 
 - GIF is the primary format: no JavaScript, CSS animation, remote card service or iframe is needed in the README.
-- Each loop is 160 frames at 20 fps. Smooth periodic functions avoid an abrupt last-to-first transition.
+- The hero is 320 frames / 16 seconds at 20 fps; other sections retain their 160-frame / eight-second loops. Smooth periodic functions avoid an abrupt last-to-first transition.
 - Delta frames and a grayscale palette keep the animation small while retaining sharp text.
 - `<picture>` selects mobile layouts below 900 px and motion-free SVGs for `prefers-reduced-motion: reduce`.
 - Every asset has descriptive alt text and SVG titles. Essential copy remains visible throughout the loop.
