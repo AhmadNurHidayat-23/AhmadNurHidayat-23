@@ -214,11 +214,11 @@ const heroOnly=process.argv.includes('--hero');
 for(const mobile of (process.argv.includes('--mobile')?[true]:[false,true])){
  const suffix=mobile?'-mobile':'';
  if(heroOnly){
-   await render('hero'+suffix,t=>hero(t,mobile));
+   await render('hero-beyond'+suffix,t=>hero(t,mobile));
    continue;
  }
  if(!activityOnly){
-   await render('hero'+suffix,t=>hero(t,mobile));
+   await render('hero-beyond'+suffix,t=>hero(t,mobile));
    await render('technologies'+suffix,t=>technology(t,mobile));
    for(const project of projects) await render(project.slug+suffix,t=>projectCard(project,t,mobile));
    await render('footer'+suffix,t=>footer(t,mobile));
@@ -228,7 +228,7 @@ for(const mobile of (process.argv.includes('--mobile')?[true]:[false,true])){
 if(!activityOnly&&!heroOnly){
  const contact=async(mobile)=>{
    const suffix=mobile?'-mobile':'';
-   const names=['hero','technologies','simaul-web','simaul-mobile','task-board','activity','footer'];
+   const names=['hero-beyond','technologies','simaul-web','simaul-mobile','task-board','activity','footer'];
    const width=mobile?390:900;let y=0;const items=[];
    for(const name of names){const data=await sharp(path.join(PREVIEW,name+suffix+'.png')).resize({width}).png().toBuffer();const meta=await sharp(data).metadata();items.push({input:data,left:0,top:y});y+=meta.height+12;}
    await sharp({create:{width,height:y,channels:3,background:BG}}).composite(items).png().toFile(path.join(PREVIEW,`overview${suffix}.png`));
