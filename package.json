@@ -1,0 +1,18 @@
+{
+  "name": "ahmad-profile-motion",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reproducible motion assets for Ahmad Nur Hidayat's GitHub profile.",
+  "scripts": {
+    "build": "node .design/render.mjs",
+    "build:activity": "node .design/render.mjs --activity",
+    "refresh:activity": "node .design/fetch-activity.mjs"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "gifenc": "1.0.3",
+    "opentype.js": "1.3.4",
+    "sharp": "0.35.5"
+  }
+}
