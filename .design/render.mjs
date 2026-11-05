@@ -55,24 +55,43 @@ function glyph(x,y,size,t){
  }
  return `<g transform="translate(${x} ${y})">${body}${line(-size*.55,0,size*.55,0,MUTED,.5)}${line(0,-size*.55,0,size*.55,MUTED,.5)}<circle r="4" fill="${FG}"/></g>`;
 }
+function welcomeTypewriter(t,mobile,p){
+ const headline='WELCOME TO MY GITHUB',seconds=t*PERIOD;
+ let count=headline.length;
+ if(seconds>=2&&seconds<3.3) count=Math.max(0,headline.length-Math.floor((seconds-2)/1.3*headline.length));
+ else if(seconds>=3.3&&seconds<3.6) count=0;
+ else if(seconds>=3.6&&seconds<5.8) count=Math.min(headline.length,Math.floor((seconds-3.6)/2.2*headline.length));
+ const visible=headline.slice(0,count);
+ // At typical GitHub content widths these render at ~36px desktop / ~23px mobile.
+ const size=mobile?56:52;
+ const first=mobile?visible.slice(0,10):visible;
+ const second=mobile&&count>10?visible.slice(11):'';
+ const firstY=mobile?199:270,secondY=271;
+ let body=first?text(first,p,firstY,size):'';
+ if(second) body+=text(second,p,secondY,size);
+ const cursorLine=mobile&&count>10?second:first;
+ const cursorY=mobile&&count>10?secondY:firstY;
+ if(Math.floor(seconds/.4)%2===0){
+   const cursorX=p+display.getAdvanceWidth(cursorLine,size)+8;
+   body+=`<rect x="${cursorX}" y="${cursorY-size*.76}" width="4" height="${size*.82}" fill="${FG}"/>`;
+ }
+ return body;
+}
 function hero(t,mobile=false){
  const w=mobile?720:1200,h=mobile?490:480,p=mobile?36:56;
  let b=label('WEB + MOBILE DEVELOPER',p,mobile?56:53,mobile?24:18);
  b+=line(p,80,w-p,80);
+ b+=welcomeTypewriter(t,mobile,p);
  if(mobile){
-   b+=movingText('BEYOND.',p,219,fit('BEYOND.',490,116),t,4);
-   b+=movingText('THE CODE.',p-2,359,fit('THE CODE.',w-p*2,114),t+.07,4);
    b+=glyph(610,207,100,t);
    b+=line(p,405,w-p,405);
    b+=label('DESIGN. DEVELOP. CREATE.',p,451,26,FG);
  }else{
-   b+=movingText('BEYOND.',p,223,fit('BEYOND.',860,162),t,5);
-   b+=movingText('THE CODE.',p-5,371,fit('THE CODE.',860,162),t+.07,6);
    b+=glyph(1048,258,150,t);
    b+=label('DESIGN. DEVELOP. CREATE.',p,439,20,FG);
    b+=label('SELECTED WORK / GITHUB',863,439,17);
  }
- return svg(w,h,b,'Beyond. The code. Web and mobile developer. Design. Develop. Create.');
+ return svg(w,h,b,'Welcome to my GitHub. Web and mobile developer. Design. Develop. Create.');
 }
 const technologies=[['Laravel','laravel'],['PHP','php'],['JavaScript','javascript'],['React','react'],['Tailwind CSS','tailwindcss'],['MySQL','mysql'],['Flutter','flutter'],['Git','git'],['GitHub','github']];
 const logos={};
@@ -214,11 +233,11 @@ const heroOnly=process.argv.includes('--hero');
 for(const mobile of (process.argv.includes('--mobile')?[true]:[false,true])){
  const suffix=mobile?'-mobile':'';
  if(heroOnly){
-   await render('hero-beyond'+suffix,t=>hero(t,mobile));
+   await render('hero-welcome-compact'+suffix,t=>hero(t,mobile));
    continue;
  }
  if(!activityOnly){
-   await render('hero-beyond'+suffix,t=>hero(t,mobile));
+   await render('hero-welcome-compact'+suffix,t=>hero(t,mobile));
    await render('technologies'+suffix,t=>technology(t,mobile));
    for(const project of projects) await render(project.slug+suffix,t=>projectCard(project,t,mobile));
    await render('footer'+suffix,t=>footer(t,mobile));
@@ -228,7 +247,7 @@ for(const mobile of (process.argv.includes('--mobile')?[true]:[false,true])){
 if(!activityOnly&&!heroOnly){
  const contact=async(mobile)=>{
    const suffix=mobile?'-mobile':'';
-   const names=['hero-beyond','technologies','simaul-web','simaul-mobile','task-board','activity','footer'];
+   const names=['hero-welcome-compact','technologies','simaul-web','simaul-mobile','task-board','activity','footer'];
    const width=mobile?390:900;let y=0;const items=[];
    for(const name of names){const data=await sharp(path.join(PREVIEW,name+suffix+'.png')).resize({width}).png().toBuffer();const meta=await sharp(data).metadata();items.push({input:data,left:0,top:y});y+=meta.height+12;}
    await sharp({create:{width,height:y,channels:3,background:BG}}).composite(items).png().toFile(path.join(PREVIEW,`overview${suffix}.png`));

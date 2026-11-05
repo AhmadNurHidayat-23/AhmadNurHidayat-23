@@ -3,10 +3,10 @@
 <p align="center">
 <a href="https://ahmadnurhidayat.vercel.app/">
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="assets/motion/hero-beyond-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/motion/hero-beyond.svg">
-  <source media="(max-width: 900px)" srcset="assets/motion/hero-beyond-mobile.gif">
-  <img src="assets/motion/hero-beyond.gif" width="1200" alt="Beyond. The code. Web and mobile developer. Design. Develop. Create.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="assets/motion/hero-welcome-compact-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/motion/hero-welcome-compact.svg">
+  <source media="(max-width: 900px)" srcset="assets/motion/hero-welcome-compact-mobile.gif">
+  <img src="assets/motion/hero-welcome-compact.gif" width="1200" alt="Welcome to my GitHub. Web and mobile developer. Design. Develop. Create.">
 </picture>
 </a>
 </p>
