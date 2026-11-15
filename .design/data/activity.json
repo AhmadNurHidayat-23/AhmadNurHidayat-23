@@ -1,55 +1,9 @@
 {
   "login": "AhmadNurHidayat-23",
-  "fetchedAt": "2026-11-14T07:38:04.362Z",
+  "fetchedAt": "2026-11-15T07:53:35.230Z",
   "source": "https://docs.github.com/en/graphql/reference/objects#contributioncalendar",
-  "totalContributions": 339,
+  "totalContributions": 340,
   "weeks": [
-    {
-      "contributionDays": [
-        {
-          "date": "2025-11-09",
-          "contributionCount": 0,
-          "contributionLevel": "NONE",
-          "weekday": 0
-        },
-        {
-          "date": "2025-11-10",
-          "contributionCount": 0,
-          "contributionLevel": "NONE",
-          "weekday": 1
-        },
-        {
-          "date": "2025-11-11",
-          "contributionCount": 0,
-          "contributionLevel": "NONE",
-          "weekday": 2
-        },
-        {
-          "date": "2025-11-12",
-          "contributionCount": 0,
-          "contributionLevel": "NONE",
-          "weekday": 3
-        },
-        {
-          "date": "2025-11-13",
-          "contributionCount": 0,
-          "contributionLevel": "NONE",
-          "weekday": 4
-        },
-        {
-          "date": "2025-11-14",
-          "contributionCount": 0,
-          "contributionLevel": "NONE",
-          "weekday": 5
-        },
-        {
-          "date": "2025-11-15",
-          "contributionCount": 0,
-          "contributionLevel": "NONE",
-          "weekday": 6
-        }
-      ]
-    },
     {
       "contributionDays": [
         {
@@ -2439,6 +2393,16 @@
           "contributionCount": 1,
           "contributionLevel": "FIRST_QUARTILE",
           "weekday": 6
+        }
+      ]
+    },
+    {
+      "contributionDays": [
+        {
+          "date": "2026-11-15",
+          "contributionCount": 1,
+          "contributionLevel": "FIRST_QUARTILE",
+          "weekday": 0
         }
       ]
     }
